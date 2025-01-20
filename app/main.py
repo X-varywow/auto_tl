@@ -1,5 +1,5 @@
 import customtkinter
-from utils.tasks import TaskManager
+from utils.thread_manager import TaskManager
 from utils.common import (
     random_sleep
 )
