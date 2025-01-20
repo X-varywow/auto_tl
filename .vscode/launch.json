@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.0.1",
+    "configurations": [
+        {
+            "name": "Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "APP_NAME": "AutoTorchlight",
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "启动 UI",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/app/main.py",
+            "console": "integratedTerminal",
+            "env": {
+                "APP_NAME": "AutoTorchlight",
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        }
+    ]
+}
