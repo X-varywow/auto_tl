@@ -1,4 +1,5 @@
 import win32gui
+import time
 
 def list_windows():
     top_windows = []
@@ -31,6 +32,20 @@ def find_window(prefix="Torchlight:"):
 def enum_windows_callback(hwnd, top_windows):
     if win32gui.IsWindowVisible(hwnd) and win32gui.GetWindowText(hwnd) != "":
         top_windows.append((hwnd, win32gui.GetWindowText(hwnd)))
+
+
+def is_window_active(hwnd):
+    """
+    检测窗口是否处于激活状态
+    """
+    active_hwnd = win32gui.GetForegroundWindow()
+    return hwnd == active_hwnd
+
+def check_active():
+    hwnd = find_window()
+    while not is_window_active(hwnd):
+        print(f"应用窗口未激活")
+        time.sleep(3)
 
 
 if __name__ == "__main__":

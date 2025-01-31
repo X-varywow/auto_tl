@@ -199,5 +199,5 @@ if __name__ == "__main__":
 
     # 窗口属性
     root.attributes("-topmost", True)
-    root.attributes("-alpha", 0.8)
+    root.attributes("-alpha", 0.88)
     root.mainloop()

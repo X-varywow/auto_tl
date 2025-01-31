@@ -86,8 +86,13 @@ def raw2keymouse(s):
     根据录制的事件文本，完成自动控制；适用于机械重复化的操作
     """
     for line in s.strip().split("\n"):
-        func, pos, t = eval(line)
-        random_sleep(t)
+        press_t = 0.5
+        func, pos, tt = eval(line)
+        if type(tt) == tuple:
+            sleep_t, press_t = tt
+        else:
+            sleep_t = tt
+        random_sleep(sleep_t)
         if func == "click":
             x,y,btn = pos
             btn = btn.split(".")[-1]
@@ -95,13 +100,13 @@ def raw2keymouse(s):
             pyautogui.moveTo(x, y, 0.2, pyautogui.easeInQuad)
 
             if btn == 'left':
-                # mouse.press(Button.left)  # 按下右键
-                # # random_sleep(0.2)
-                # mouse.release(Button.left)  # 松开右键
-                pyautogui.click(x=x, y=y)
+                mouse.press(Button.left)
+                time.sleep(0.2)
+                mouse.release(Button.left)
+                # pyautogui.click(x=x, y=y)
             else:
-                mouse.press(Button.right)  # 按下右键, 右键移动，需要较长的时长
-                random_sleep(0.5)
+                mouse.press(Button.right)  # 按下右键
+                time.sleep(press_t)     # 右键移动，需要较长的时长
                 mouse.release(Button.right)  # 松开右键
             # print(f"pyautogui.click(x={x}, y={y}, button={btn})")
         elif func == "key":
@@ -110,51 +115,13 @@ def raw2keymouse(s):
         else:
             print(f"error func: {func=}")
 
-
-
-
-raw = """
-['key', 'd', 4]
-['click', (1408, 1206, 'Button.left'), 1]
-['click', (1425, 1784, 'Button.left'), 1]
-['click', (1438, 699, 'Button.left'), 2]
-['click', (1434, 742, 'Button.right'), 2]
-['key', 'a', 51]
-['key', 'a', 0.5]
-['key', 'a', 0.5]
-['key', 'd', 0.7]
-"""
-
-raw2 = """
-['key', 'd', 6]
-['click', (952, 704, 'Button.left'), 1]
-['click', (956, 1052, 'Button.left'), 1]
-['click', (964, 400, 'Button.left'), 2]
-['click', (970, 350, 'Button.right'), 2]
-['key', 'a', 55]
-['key', 'a', 0.5]
-['key', 'a', 0.5]
-['key', 'd', 0.7]
-"""
-
-raw3 = """
-['key', 'd', 7]
-['click', (952, 704, 'Button.left'), 1]
-['click', (956, 1052, 'Button.left'), 1]
-['click', (964, 400, 'Button.left'), 2]
-['click', (970, 350, 'Button.right'), 2]
-['key', 'a', 62]
-['key', 'a', 0.5]
-['key', 'a', 0.5]
-['key', 'd', 0.7]
-"""
-
-
 if __name__ == "__main__":
+    from app.raw import *
+
     cnt = 3597
     while cnt >= 4:
         cnt -= 4
-        raw2keymouse(raw2)
+        raw2keymouse(raw_k7_jianshi)
     time.sleep(1000)
     # time.sleep(1)
     # pyautogui.click(x=1434, y=756, button='right')

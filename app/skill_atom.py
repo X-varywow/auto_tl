@@ -1,13 +1,15 @@
 import pyautogui
 import time
-
+from utils.common import random_sleep
 
 # 150ms
-def click_img(img):
+def click_img(img, sleep_time=0):
     img_path = f"img/{img}.png"
+    if sleep_time:
+        random_sleep(sleep_time)
     try:
         # 使用 locateOnScreen 查找图片位置
-        location = pyautogui.locateOnScreen(img_path, confidence=0.8)  # confidence 参数需要 OpenCV
+        location = pyautogui.locateOnScreen(img_path, confidence=0.6)  # confidence 参数需要 OpenCV
         if location is not None:
             # 获取图片的中心点坐标
             center = pyautogui.center(location)
@@ -22,4 +24,5 @@ def click_img(img):
         else:
             print(f"未找到图片 {img_path}")
     except Exception as e:
+        raise e
         print(f"发生错误: {e}")
