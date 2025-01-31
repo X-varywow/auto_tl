@@ -19,5 +19,6 @@ pip install paddleocr
 ## 0131
 
 - [ ] 将万界弄到 ui 里面去；从 ui 里面启动了
+- [ ] 自适应 窗口布局
 - [ ] feat: 自动刷监视者
 - [ ] feat: 收益统计

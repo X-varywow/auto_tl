@@ -1,22 +1,5 @@
 import win32gui
 
-def get_window_position(hwnd):
-    # 获取窗口的矩形区域
-    left, top, right, bottom = win32gui.GetWindowRect(hwnd)
-    return (left, top), (right, bottom)
-
-def find_window(title):
-    # 寻找窗口
-    hwnd = win32gui.FindWindow(None, title)
-    if hwnd:
-        return hwnd
-    else:
-        return None
-
-def enum_windows_callback(hwnd, top_windows):
-    if win32gui.IsWindowVisible(hwnd) and win32gui.GetWindowText(hwnd) != "":
-        top_windows.append((hwnd, win32gui.GetWindowText(hwnd)))
-
 def list_windows():
     top_windows = []
     win32gui.EnumWindows(enum_windows_callback, top_windows)
@@ -24,11 +7,36 @@ def list_windows():
     for hwnd, title in top_windows:
         print(f"句柄: {hwnd}, 标题: {title}")
 
+    return top_windows
+
+def get_window_position(hwnd):
+    # 获取窗口的矩形区域
+    left, top, right, bottom = win32gui.GetWindowRect(hwnd)
+    return (left, top), (right, bottom)
+
+top_windows = list_windows()
+
+def find_window(prefix="Torchlight:"):
+    # 寻找窗口
+    # hwnd = win32gui.FindWindow(None, title)
+    # if hwnd:
+    #     return hwnd
+    # else:
+    #     return None
+    for hwnd, title in top_windows:
+        if title.startswith(prefix):
+            return hwnd
+
+
+def enum_windows_callback(hwnd, top_windows):
+    if win32gui.IsWindowVisible(hwnd) and win32gui.GetWindowText(hwnd) != "":
+        top_windows.append((hwnd, win32gui.GetWindowText(hwnd)))
 
 
 if __name__ == "__main__":
-    title = '窗口标题'
-    hwnd = find_window(title)
+    # list_windows()
+    prefix="Torchlight:"
+    hwnd = find_window()
 
     if hwnd:
         position = get_window_position(hwnd)

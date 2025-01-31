@@ -4,12 +4,6 @@ from pynput.mouse import Button, Controller
 mouse = Controller()
 
 
-
-
-def auto_pick():
-    pyautogui.press("a")
-
-
 def raw2keymouse(s):
     """
     根据录制的事件文本，完成自动控制；适用于机械重复化的操作

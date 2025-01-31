@@ -2,8 +2,12 @@ from utils.thread_manager import TaskManager
 from collections import defaultdict
 import keyboard
 import customtkinter
-from app.func_ocr import ocr_scan
-from app.func_simple import auto_pick
+from app.skill_ocr import ocr_scan
+from app.skill_comp import (
+    auto_pick,
+    auto_wanjie,
+    auto_jianshi_ocr
+)
 import time
 import os
 from pynput.mouse import Listener as MouseListener
@@ -184,8 +188,8 @@ if __name__ == "__main__":
     # 添加功能按钮
     CommonButton(btn_panel, "自动拾取", "f12", auto_pick, time_sleep=0.15)
     CommonButton(btn_panel, "实时扫描", "f11", ocr_scan, time_sleep=2) 
-    CommonButton(btn_panel, "自动K7万界", "f10", ocr_scan, time_sleep=2) 
-    CommonButton(btn_panel, "自动K7监视", "f9", ocr_scan, time_sleep=2)
+    CommonButton(btn_panel, "自动K7万界", "f10", auto_wanjie, time_sleep=99999) 
+    CommonButton(btn_panel, "自动K7监视", "f9", auto_jianshi_ocr, time_sleep=99999)
 
     # 调整布局
     # root.grid_rowconfigure(0, weight=1)
