@@ -37,20 +37,21 @@ common_quit = """
 """
 
 raw_k7_jianshi = """
-['key', 'd', 5]
-['click', (453, 826, 'Button.left'), 1.5]
-['click', (969, 360, 'Button.left'), 1.2]
+['key', 'd', 6]
+['click', (453, 826, 'Button.left'), 1.6]
+['click', (969, 360, 'Button.left'), 1.8]
 ['click', (974, 1039, 'Button.left'), 0.5]
-['click', (988, 196, 'Button.right'), 2.5]
-['click', (1785, 112, 'Button.left'), 0.2]
+['click', (988, 196, 'Button.right'), 2.7]
+['click', (1785, 112, 'Button.left'), 0.3]
 ['click', (1785, 112, 'Button.left'), 0.1]
 ['click', (988, 617, 'Button.left'), 1]
-['click', (937, 280, 'Button.right'), (1, 0.2)]
+['click', (942, 280, 'Button.right'), (1, 0.2)]
 ['key', 'a', 3]
 ['key', 'a', 0.3]
 ['key', 'a', 0.3]
 ['key', 'a', 0.3]
+['key', 'a', 0.3]
 ['key', 'a', 0.2]
-['click', (937, 280, 'Button.right'), (1, 0.5)]
+['click', (942, 280, 'Button.right'), (1, 0.5)]
 ['key', 'd', 0.3]
 """

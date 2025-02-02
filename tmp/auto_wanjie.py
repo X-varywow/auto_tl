@@ -77,8 +77,8 @@ def get_random(ratio):
     return (random.random()-0.5)*ratio*2
 
 
-def random_sleep(t, roll = 0.1):
-    pyautogui.sleep(t + max(min(t*get_random(roll), 1), -1))
+def random_sleep(t, roll = 0.05):
+    time.sleep(t + max(min(t*get_random(roll), 1), -1))
 
 
 def raw2keymouse(s):
