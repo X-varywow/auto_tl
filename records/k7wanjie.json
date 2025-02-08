@@ -1,0 +1,118 @@
+[
+    {
+        "type": "key_press",
+        "time": 4.266196966171265,
+        "key": "'d'"
+    },
+    {
+        "type": "key_release",
+        "time": 4.379654169082642,
+        "key": "'d'"
+    },
+    {
+        "type": "mouse_click",
+        "time": 5.571393013000488,
+        "x": 1260,
+        "y": 896,
+        "button": "Button.left",
+        "pressed": false,
+        "duration": 0.07592320442199707
+    },
+    {
+        "type": "mouse_click",
+        "time": 6.907478094100952,
+        "x": 1279,
+        "y": 1384,
+        "button": "Button.left",
+        "pressed": false,
+        "duration": 0.08409523963928223
+    },
+    {
+        "type": "key_press",
+        "time": 9.70412015914917,
+        "key": "'q'"
+    },
+    {
+        "type": "key_release",
+        "time": 9.78409719467163,
+        "key": "'q'"
+    },
+    {
+        "type": "mouse_click",
+        "time": 10.369183778762817,
+        "x": 1273,
+        "y": 529,
+        "button": "Button.left",
+        "pressed": false,
+        "duration": 0.3217349052429199
+    },
+    {
+        "type": "key_press",
+        "time": 60.28370428085327,
+        "key": "'a'"
+    },
+    {
+        "type": "key_release",
+        "time": 60.35947847366333,
+        "key": "'a'"
+    },
+    {
+        "type": "key_press",
+        "time": 60.48202586174011,
+        "key": "'a'"
+    },
+    {
+        "type": "key_release",
+        "time": 60.539981842041016,
+        "key": "'a'"
+    },
+    {
+        "type": "key_press",
+        "time": 60.651971101760864,
+        "key": "'a'"
+    },
+    {
+        "type": "key_release",
+        "time": 60.72871375083923,
+        "key": "'a'"
+    },
+    {
+        "type": "key_press",
+        "time": 60.83569288253784,
+        "key": "'a'"
+    },
+    {
+        "type": "key_release",
+        "time": 60.89691424369812,
+        "key": "'a'"
+    },
+    {
+        "type": "key_press",
+        "time": 60.99818444252014,
+        "key": "'a'"
+    },
+    {
+        "type": "key_release",
+        "time": 61.056270360946655,
+        "key": "'a'"
+    },
+    {
+        "type": "mouse_click",
+        "time": 61.90369915962219,
+        "x": 1305,
+        "y": 543,
+        "button": "Button.left",
+        "pressed": false,
+        "duration": 0.09642887115478516
+    },
+    {
+        "type": "key_press",
+        "time": 63.06224465370178,
+        "key": "'d'"
+    },
+    {
+        "type": "key_release",
+        "time": 63.16201424598694,
+        "key": "'d'"
+    }
+]

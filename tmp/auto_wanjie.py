@@ -118,10 +118,9 @@ def raw2keymouse(s):
 if __name__ == "__main__":
     from app.raw import *
 
-    mode = "wanjie"
-    # mode = "k7"
-
-    content = raw_wanjie if mode == "wanjie" else raw_k7_jianshi4
+    content = raw_wanjie
+    content = raw_k7_jianshi
+    content = raw_k7_jianshi4
 
     cnt = 688
     while cnt >= 4:
