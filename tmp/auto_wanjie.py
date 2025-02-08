@@ -118,10 +118,15 @@ def raw2keymouse(s):
 if __name__ == "__main__":
     from app.raw import *
 
-    cnt = 3597
+    mode = "wanjie"
+    # mode = "k7"
+
+    content = raw_wanjie if mode == "wanjie" else raw_k7_jianshi4
+
+    cnt = 688
     while cnt >= 4:
         cnt -= 4
-        raw2keymouse(raw_k7_jianshi)
+        raw2keymouse(content)
     time.sleep(1000)
     # time.sleep(1)
     # pyautogui.click(x=1434, y=756, button='right')
