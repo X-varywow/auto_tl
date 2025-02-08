@@ -173,8 +173,6 @@ part3. 主程
 
 if __name__ == "__main__":
 
-    manager = TaskManager()
-
     # 创建窗口
     root = customtkinter.CTk()
     root.geometry("400x300")
